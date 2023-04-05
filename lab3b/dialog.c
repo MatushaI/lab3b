@@ -292,6 +292,32 @@ int search_In(TableHD *table, Table *search) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void printCat(void) {
     
     const char *cat[] = {"  ╭━━━╮  ╱╲   ╱╲", "  ┃╭━━╯  ▏▔▔▔▔▔▕ ", "  ┃╰━━━━━▏╭▆┊╭▆▕ ", "  ╰┫╯╯╯╯╯▏╰╯▼╰╯▕ ", "   ┃╯╯╯╯╯▏╰━┻━╯▕", "   ╰┓┏┳━┓┏┳┳━━━╯","    ┃┃┃ ┃┃┃┃","    ┗┻┛ ┗┛┗┛\n\n"};
@@ -357,7 +383,7 @@ void printKoala(void) {
             printf("\n");
         }
         printf("  Ползу на лабу не спавши ночь\n");
-        usleep(90000);
+        usleep(70000);
     }
     system("clear");
 }
