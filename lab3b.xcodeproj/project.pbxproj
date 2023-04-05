@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		651858F929DA57F700317E90 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 651858F829DA57F700317E90 /* main.c */; };
-		6518590129DA598300317E90 /* Table.c in Sources */ = {isa = PBXBuildFile; fileRef = 6518590029DA598300317E90 /* Table.c */; };
+		6518590129DA598300317E90 /* TableHD.c in Sources */ = {isa = PBXBuildFile; fileRef = 6518590029DA598300317E90 /* TableHD.c */; };
 		65E5B09A29DCBCCB00E1C218 /* getFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 65E5B09929DCBCCB00E1C218 /* getFunctions.c */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +27,8 @@
 /* Begin PBXFileReference section */
 		651858F529DA57F700317E90 /* lab3b */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lab3b; sourceTree = BUILT_PRODUCTS_DIR; };
 		651858F829DA57F700317E90 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		651858FF29DA598300317E90 /* Table.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
-		6518590029DA598300317E90 /* Table.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Table.c; sourceTree = "<group>"; };
+		651858FF29DA598300317E90 /* TableHD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableHD.h; sourceTree = "<group>"; };
+		6518590029DA598300317E90 /* TableHD.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TableHD.c; sourceTree = "<group>"; };
 		65E5B09829DCBCCB00E1C218 /* getFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = getFunctions.h; sourceTree = "<group>"; };
 		65E5B09929DCBCCB00E1C218 /* getFunctions.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = getFunctions.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,8 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				651858F829DA57F700317E90 /* main.c */,
-				651858FF29DA598300317E90 /* Table.h */,
-				6518590029DA598300317E90 /* Table.c */,
+				651858FF29DA598300317E90 /* TableHD.h */,
+				6518590029DA598300317E90 /* TableHD.c */,
 				65E5B09829DCBCCB00E1C218 /* getFunctions.h */,
 				65E5B09929DCBCCB00E1C218 /* getFunctions.c */,
 			);
@@ -129,7 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6518590129DA598300317E90 /* Table.c in Sources */,
+				6518590129DA598300317E90 /* TableHD.c in Sources */,
 				651858F929DA57F700317E90 /* main.c in Sources */,
 				65E5B09A29DCBCCB00E1C218 /* getFunctions.c in Sources */,
 			);
