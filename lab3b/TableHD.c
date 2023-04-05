@@ -366,4 +366,8 @@ void exportTableHD(TableHD *table) {
     fwrite(&table->size, sizeof(int), 1, table->file);
     fseek(table->file, 0, SEEK_SET);
     fwrite(&table->maxOffset, sizeof(int), 1, table->file);
+    fclose(table->file);
+    free(table->ks);
+    free(table);
+    
 }

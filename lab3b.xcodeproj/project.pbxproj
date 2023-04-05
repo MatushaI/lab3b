@@ -31,6 +31,7 @@
 		6518590029DA598300317E90 /* TableHD.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TableHD.c; sourceTree = "<group>"; };
 		65E5B09829DCBCCB00E1C218 /* getFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = getFunctions.h; sourceTree = "<group>"; };
 		65E5B09929DCBCCB00E1C218 /* getFunctions.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = getFunctions.c; sourceTree = "<group>"; };
+		65E5B09E29DD17D300E1C218 /* test.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = test.bin; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 				6518590029DA598300317E90 /* TableHD.c */,
 				65E5B09829DCBCCB00E1C218 /* getFunctions.h */,
 				65E5B09929DCBCCB00E1C218 /* getFunctions.c */,
+				65E5B09E29DD17D300E1C218 /* test.bin */,
 			);
 			path = lab3b;
 			sourceTree = "<group>";
