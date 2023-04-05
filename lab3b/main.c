@@ -2,60 +2,36 @@
 #include <stdlib.h>
 #include "TableHD.h"
 #include "getFunctions.h"
+#include "dialog.h"
 
 
 int main(void) {
-    /*
-        FILE *file = getFile("Введите название файла с таблицей\n", "w+r", NULL);
-        if(file == NULL) {
-            printf("error\n");
-        }
-        unsigned long long test = 184;
-        fwrite(&test, sizeof(unsigned long long), 1, file);
-        test = 10;
-        fwrite(&test, sizeof(unsigned long long), 1, file);
-        test = 0;
-        fwrite(&test, sizeof(unsigned long long), 1, file);
     
-    
-        KeySpace *ks = calloc(10, sizeof(KeySpace));
-    
-        for (int i = 0; i < 10; i++) {
-            ks[i].key = i*i;
-            ks[i].latestVersionOffset = 0;
-            ks[i].node = NULL;
-        }
-        
-        fwrite(ks, sizeof(KeySpace), 10, file);
-    
-         */
-        
-        FILE *file = getFile("Введите название файла с таблицей\n", "r+", NULL);
+    FILE *file = importBinaryFile("Введите название файла, содержащего таблицу\n", "r+");
+    if(file == NULL) {
+        return 0;
+    }
         TableHD *table = importTableHD(file);
-        
-        printTableHD(table);
-        printf("==========\n");
-        addInfoHD(table, 20, "123456789");
-        addInfoHD(table, 20, "123456789");
-        printf("==========\n");
-        printTableHD(table);
-        deleteKeyVersionHD(table, 20, 1);
-        
-        
-        //deleteKeyHD(table, 20);
-        printf("==========\n");
-        printTableHD(table);
-    
-        
         Table *search = tableCreate(1);
-        searchKeyVersionDialog(table, search, 20, 200);
-        printTable(search);
     
-        exportTableHD(table);
-        clearTable(search);
-        
-         
-        
+    
+    const char *msgs[] = {"0. Выход", "1. Добавить элемент", "2. Поиск", "3. Удаление", "4. Печать таблицы", "5. Импорт из текстового файла"};
+    const int Nmsgs = sizeof(msgs) / sizeof(msgs[0]);
+    
+    printCat();
+    
+    int (*func[])(TableHD *, Table *) = {NULL, addInfo_In, search_In, delete_In, printTable_In, importFile};
+    
+    int rc;
+    while((rc = dialog(msgs, Nmsgs, NULL))){
+        if(!func[rc](table, search)) 
+            break;
+    }
+    
+    exportTableHD(table);
+    clearTable(search);
+    
+    printf("\n*** Программа завершена ***\n");
     
     return 0;
 }

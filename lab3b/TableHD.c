@@ -86,7 +86,7 @@ int addInfoHD(TableHD *table, int key, char *info) {
         
         table->maxOffset = table->maxOffset + offset;
         table->size = table->size + 1;
-        //free(info);
+        free(info);
         free(node);
     }
     
@@ -112,6 +112,7 @@ void printTableHD(TableHD *table) {
     NodeHD node;
     unsigned long long offset = 0;
     char *string = NULL;
+    printf("\n");
     for (int i = 0; i < table->maxSize; i++) {
         if((offset = ks[i].latestVersionOffset) != 0) {
             printf("Ключ: %d\n", ks[i].key);
@@ -263,7 +264,6 @@ int searchKeyDialog(TableHD *table, Table *search, int key) {
     search->ks[0].node = NULL;
     NodeHD node;
     char *string = NULL;
-    printf("тут\n");
     for (int i = 0; i < table->maxSize; i++) {
         if(table->ks[i].key == key && table->ks[i].latestVersionOffset != 0) {
             search->realSize = 1;
@@ -287,7 +287,6 @@ int searchKeyDialog(TableHD *table, Table *search, int key) {
                 ks->isActive = 1;
                 ks->node->info = string;
                 
-                printf("%s\n", ks->node->info);
                 offset = node.nextOffset;
                 
             }
