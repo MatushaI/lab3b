@@ -2,7 +2,6 @@
 #include "getFunctions.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <readline/readline.h>
 #include "TableHD.h"
 #include <time.h>
 #include <unistd.h>
