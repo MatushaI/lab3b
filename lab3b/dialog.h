@@ -14,5 +14,6 @@ int search_In(TableHD *table, Table *search);
 int printTable_In(TableHD *table, Table *search);
 
 void printCat(void);
+void printKoala(void);
 
 #endif 

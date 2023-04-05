@@ -18,7 +18,7 @@ int main(void) {
     const char *msgs[] = {"0. Выход", "1. Добавить элемент", "2. Поиск", "3. Удаление", "4. Печать таблицы", "5. Импорт из текстового файла"};
     const int Nmsgs = sizeof(msgs) / sizeof(msgs[0]);
     
-    printCat();
+    printKoala();
     
     int (*func[])(TableHD *, Table *) = {NULL, addInfo_In, search_In, delete_In, printTable_In, importFile};
     
