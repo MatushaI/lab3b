@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <string.h>
 
+// Импорт таблицы (внутренняя hard)
+
 TableHD *importTableHD(FILE *file) {
     
     TableHD *table = calloc(sizeof(TableHD), 1);
@@ -30,6 +32,8 @@ TableHD *importTableHD(FILE *file) {
     
     return table;
 }
+
+// Добавление информации по ключу (внешняя hard)
 
 int addInfoHD(TableHD *table, int key, char *info) {
     int searchResult = searchPlaceHD(table, key);
@@ -89,6 +93,8 @@ int addInfoHD(TableHD *table, int key, char *info) {
     return 0;
 }
 
+//Найти свободное место для вставки (внутренняя)
+
 int searchPlaceHD(TableHD *table, int key) {
     KeySpaceHD *keySpace = table->ks;
     for (int i = 0; i < table->maxSize; i++) {
@@ -98,6 +104,8 @@ int searchPlaceHD(TableHD *table, int key) {
     }
     return -1;
 }
+
+// Печать таблицы (внешняя)
 
 void printTableHD(TableHD *table) {
     KeySpaceHD *ks = table->ks;
@@ -121,6 +129,8 @@ void printTableHD(TableHD *table) {
     }
 }
 
+// Удаление по ключу (внешняя)
+
 int deleteKeyHD(TableHD *table, int key) {
     int flag = 0;
     for (int i = 0; i < table->maxSize; i++) {
@@ -138,6 +148,8 @@ int deleteKeyHD(TableHD *table, int key) {
     
     return 1;
 }
+
+// Удаление по ключу и версии (внешняя)
 
 int deleteKeyVersionHD(TableHD *table, int key, int version) {
     int flag = 0;
@@ -178,6 +190,8 @@ int deleteKeyVersionHD(TableHD *table, int key, int version) {
     return 1;
 }
 
+// Добавление узла (main)
+
 int addNode(KeySpace *element){
     Node* node = element->node;
     Node *newnode = NULL;
@@ -197,6 +211,7 @@ int addNode(KeySpace *element){
     return 1;
 }
 
+//Создание таблицы (специальная main)
 
 Table *tableCreate(int size) {
     Table *table = NULL;
@@ -211,6 +226,8 @@ Table *tableCreate(int size) {
     return table;
 }
 
+// Очистка списка (main)
+
 void clearList(Node *node) {
     Node *element = node;
     Node *del = NULL;
@@ -222,7 +239,7 @@ void clearList(Node *node) {
     }
 }
 
-//Очистка таблицы
+//Очистка таблицы (main)
 
 void clearTable(Table *table) {
     if(table != NULL) {
@@ -321,6 +338,8 @@ int searchKeyVersionDialog(TableHD *table, Table *search, int key, unsigned int 
     return 0;
 }
 
+// Печать таблицы (main)
+
 void printTable(Table *table) {
     if(table != NULL){
         for (int i = 0; i < table->maxSize; i++) {
@@ -338,4 +357,13 @@ void printTable(Table *table) {
     }
 }
 
+// Выгрузка таблицы (hard)
 
+void exportTableHD(TableHD *table) {
+    fseek(table->file, 3*sizeof(unsigned long long), SEEK_SET);
+    fwrite(table->ks, sizeof(KeySpaceHD), table->maxSize, table->file);
+    fseek(table->file, 2*sizeof(unsigned long long), SEEK_SET);
+    fwrite(&table->size, sizeof(int), 1, table->file);
+    fseek(table->file, 0, SEEK_SET);
+    fwrite(&table->maxOffset, sizeof(int), 1, table->file);
+}

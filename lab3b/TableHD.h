@@ -41,15 +41,25 @@ typedef struct Table{
     int realSize;
 } Table;
 
+// внешняя память
+
 TableHD *importTableHD(FILE *file);
-int searchPlaceHD(TableHD *table, int key);
 void printTableHD(TableHD *table);
 int addInfoHD(TableHD *table, int key, char *info);
 int deleteKeyHD(TableHD *table, int key);
 int deleteKeyVersionHD(TableHD *table, int key, int version);
 int searchKeyDialog(TableHD *table, Table *search, int key);
-Table *tableCreate(int size);
-void printTable(Table *table);
 int searchKeyVersionDialog(TableHD *table, Table *search, int key, unsigned int version);
+
+// основная память
+
+void printTable(Table *table);
+
+// специальные
+
+Table *tableCreate(int size);
+int searchPlaceHD(TableHD *table, int key);
+void exportTableHD(TableHD *table);
+void clearTable(Table *table); 
 
 #endif

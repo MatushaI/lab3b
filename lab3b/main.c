@@ -30,7 +30,6 @@ int main(void) {
     
          */
         
-        ///*
         FILE *file = getFile("Введите название файла с таблицей\n", "r+", NULL);
         TableHD *table = importTableHD(file);
         
@@ -51,16 +50,11 @@ int main(void) {
         Table *search = tableCreate(1);
         searchKeyVersionDialog(table, search, 20, 200);
         printTable(search);
-        
     
-        fseek(file, 3*sizeof(unsigned long long), SEEK_SET);
-        fwrite(table->ks, sizeof(KeySpaceHD), table->maxSize, table->file);
-        fseek(file, 2*sizeof(unsigned long long), SEEK_SET);
-        fwrite(&table->size, sizeof(int), 1, table->file);
-        fseek(file, 0, SEEK_SET);
-        fwrite(&table->maxOffset, sizeof(int), 1, table->file);
+        exportTableHD(table);
+        clearTable(search);
+        
          
-         //*/
         
     
     return 0;
