@@ -357,7 +357,7 @@ void printKoala(void) {
             printf("\n");
         }
         printf("  Ползу на лабу не спавши ночь\n");
-        usleep(50000);
+        usleep(90000);
     }
     system("clear");
 }
