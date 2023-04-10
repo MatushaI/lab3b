@@ -56,7 +56,6 @@ int addInfoHD(TableHD *table, int key, char *info) {
             fseek(table->file, table->maxOffset, SEEK_SET);
             if((offset = (int) fwrite(info, sizeof(char), node->lenght, table->file)) < node->lenght) {
                 element->latestVersionOffset = 0;
-                
             }
             
         } else {
