@@ -26,8 +26,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6510273829E4C86B005FF933 /* sas.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = sas.bin; sourceTree = "<group>"; };
-		6510273929E4C88D005FF933 /* sas.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = sas.txt; sourceTree = "<group>"; };
 		651858F529DA57F700317E90 /* lab3b */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lab3b; sourceTree = BUILT_PRODUCTS_DIR; };
 		651858F829DA57F700317E90 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		651858FF29DA598300317E90 /* TableHD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableHD.h; sourceTree = "<group>"; };
@@ -77,8 +75,6 @@
 				65E5B09E29DD17D300E1C218 /* test.bin */,
 				65E5B0A029DD1C8400E1C218 /* dialog.c */,
 				65E5B09F29DD1C8400E1C218 /* dialog.h */,
-				6510273829E4C86B005FF933 /* sas.bin */,
-				6510273929E4C88D005FF933 /* sas.txt */,
 			);
 			path = lab3b;
 			sourceTree = "<group>";
